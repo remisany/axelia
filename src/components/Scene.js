@@ -8,7 +8,7 @@ import forest from "../assets/environments/forest.glb";
 import Mesh from "./Mesh";
 
 const Scene = () => {
-    const {nodes}  = useGLTF(forest)
+    const {nodes} = useGLTF(forest)
 
     return (
         Object.values(nodes).map((node, index) => (
@@ -18,3 +18,5 @@ const Scene = () => {
 }
 
 export default Scene;
+
+

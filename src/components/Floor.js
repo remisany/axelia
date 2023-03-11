@@ -8,7 +8,7 @@ const Floor = () => {
     return (
         <mesh rotation={rotation} ref={ref}>
             <planeGeometry args={[1000, 1000]}/>
-            <meshStandardMaterial color="#FFFFFF"/>
+            <meshStandardMaterial color="#FFFFFF" opacity={0} transparent/>
         </mesh>
     )
 }

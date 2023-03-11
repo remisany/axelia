@@ -1,6 +1,6 @@
+import React, {useEffect, useRef} from 'react';
 import {useSphere} from '@react-three/cannon';
 import {useFrame, useThree} from '@react-three/fiber';
-import {useEffect, useRef} from 'react';
 import * as THREE from 'three';
 
 //import hooks
@@ -17,15 +17,15 @@ const Visitor = (props) => {
     const velocity = useRef([0, 0, 0]);
     const [ref, api] = useSphere(() => ({mass: 1, type: 'Dynamic', position: [0, 10, 0], ...props}))
 
-    useEffect(() => api.velocity.subscribe((v) => (velocity.current = v)), []);
+    useEffect(() => api.velocity.subscribe((v) => (velocity.current = v)), [])
 
     useFrame(() => {
-        ref.current.getWorldPosition(camera.position);
-        frontVector.set(0, 0, Number(backward) - Number(forward));
-        sideVector.set(Number(left) - Number(right), 0, 0);
-        direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(10).applyEuler(camera.rotation);
-        speed.fromArray(velocity.current);
-        api.velocity.set(direction.x, velocity.current[1], direction.z);
+        ref.current.getWorldPosition(camera.position)
+        frontVector.set(0, 0, Number(backward) - Number(forward))
+        sideVector.set(Number(left) - Number(right), 0, 0)
+        direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(10).applyEuler(camera.rotation)
+        speed.fromArray(velocity.current)
+        api.velocity.set(direction.x, velocity.current[1], direction.z)
     })
 
     return (
