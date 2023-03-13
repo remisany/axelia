@@ -22,7 +22,7 @@ const Photo = ({photo}) => {
             gltf.scene.traverse((child) => {
                 if (child.isMesh) {
                     child.material.map = texture;
-                    child.material.map.offset.y = -0.04;
+                    child.material.map.offset.y = -0.06;
                 }
             })
 
