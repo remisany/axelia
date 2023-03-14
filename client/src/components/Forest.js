@@ -31,7 +31,6 @@ const Forest = () => {
             </a-assets>
 
             {/*<a-entity shadow="cast:true" position="0 0 0" ref={forestRef}></a-entity>*/}
-
             <Photos photos={photosConstant}/>
 
             <a-sky material="shader: flat; src: #sky;"></a-sky>

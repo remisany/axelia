@@ -1,17 +1,24 @@
-import express, {Express} from 'express';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-
 dotenv.config();
 
-const mongoUrl = process.env.MONGO_URL as string
+import express, {Express} from 'express';
+import cors from 'cors'
+import {createProxyMiddleware} from 'http-proxy-middleware';
 
-mongoose.connect(mongoUrl)
-    .then(() => console.log('Connection successful'))
-    .catch((err: Error) => console.log(err));
+//import route
+import {imageRoute} from "./routes/image";
 
 const app: Express = express();
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
-app.listen(8080, () => console.log('Server is running'));
+app.use('/api/image', imageRoute);
+
+app.use('/api/proxy/*', createProxyMiddleware({
+    target: process.env.FB,
+    changeOrigin: true,
+    pathRewrite: {'^/api/proxy': ''}
+}));
+
+app.listen(8800, () => console.log('Server is running'));
