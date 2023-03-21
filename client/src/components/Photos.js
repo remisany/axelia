@@ -1,7 +1,9 @@
-import React, {useEffect, useState, Fragment} from "react";
+import React, {useEffect, useState} from "react";
 
 //import components
 import Photo from "./Photo";
+
+//import services
 import {imageServices} from "../services/imageServices";
 
 const Photos = ({photos}) => {
@@ -14,7 +16,7 @@ const Photos = ({photos}) => {
 
     useEffect(() => {
         if (urls.length) {
-            photos[0].src = urls[0]
+            photos.map((photo, index)=> photos[index].src = urls[0])
             setLoading(false)
         }
     },[urls])
