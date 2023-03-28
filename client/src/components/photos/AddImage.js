@@ -3,18 +3,18 @@ import {useForm} from 'react-hook-form';
 import {Player} from '@lottiefiles/react-lottie-player';
 
 //import assets
-import Loader from '../assets/loader/loader.json';
+import Loader from '../../assets/loader/loader.json';
 
 //import services
-import {imageServices} from '../services/imageServices';
+import {imageServices} from '../../services/imageServices';
 
-const Image = () => {
+const AddImage = () => {
     const {handleSubmit, register} = useForm()
 
     const onSubmit = values => {
         const formData = new FormData();
         formData.append('image', values.file[0]);
-        formData.append('collection', 'desert');
+        formData.append('collection', 'forest');
         imageServices.add(formData)
     }
 
@@ -39,4 +39,4 @@ const Image = () => {
     )
 }
 
-export default Image
+export default AddImage

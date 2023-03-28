@@ -1,0 +1,3 @@
+export const
+    LOADER_PROGRESS = 'LOADER_PROGRESS',
+    LOADER_RAZ = 'LOADER_RAZ';

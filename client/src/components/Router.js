@@ -2,8 +2,8 @@ import React, {lazy, Suspense} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 //import components
-const Forest = lazy(() => import("./Forest"));
-const Image = lazy(() => import("./Image"));
+const Forest = lazy(() => import("./scenes/Forest"));
+const Image = lazy(() => import("./photos/AddImage"));
 
 const Router = () => {
     return (

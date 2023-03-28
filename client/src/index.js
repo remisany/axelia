@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import axios from "axios";
+import {Provider} from "react-redux";
 
 //import components
 import Router from "./components/Router";
@@ -10,6 +11,9 @@ import reportWebVitals from './reportWebVitals';
 
 //import serviceWorker
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+//import config
+import {store} from "./config/redux";
 
 //import styles
 import "./styles/styles.scss"
@@ -22,7 +26,9 @@ const root = ReactDOM.createRoot(
 )
 
 root.render(
-    <Router/>
+    <Provider store={store}>
+        <Router/>
+    </Provider>
 )
 
 // If you want your app to work offline and load faster, you can change
