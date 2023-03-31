@@ -5,17 +5,17 @@ import Reload from '../assets/icons/reload.svg'
 
 const forestButtons = {
     museum: {
-        position: [-96, -19, 88],
+        position: [-96, -18.5, 88],
         rotation: [0, 5, 0],
         image: Museum
     },
     enter: {
-        position: [-94, -19, 88],
+        position: [-94, -18.5, 88],
         rotation: [0, -5, 0],
         image: Enter
     },
     reload: {
-        position: [-94, -19, 88],
+        position: [-94, -18.5, 88],
         rotation: [0, -5, 0],
         image: Reload
     }

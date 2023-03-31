@@ -24,7 +24,6 @@ const LoaderContainer = ({length}) => {
         progressCalc === 100 && setTimeout(() => setDisplay(false), 1000)
     }
 
-
     useEffect(() => {
         getProgress(loader.progress)
     }, [loader])

@@ -23,13 +23,13 @@ const Forest = () => {
     }, [])
 
     return (
-        <Fragment>
-            {reset && <Scene
+        reset && <Fragment>
+            <Scene
                 env='forest'
                 envRef={forestRef}
                 model={forest}
                 rotation={[0, -70, 0]}
-            />}
+            />
             <LoaderContainer length={14}/>
         </Fragment>
 
