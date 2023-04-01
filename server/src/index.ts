@@ -21,4 +21,4 @@ app.use('/api/proxy/*', createProxyMiddleware({
     pathRewrite: {'^/api/proxy': ''}
 }));
 
-app.listen(8800, () => console.log('Server is running'));
+app.listen(process.env.PORT || 8800, () => console.log('Server is running'));
