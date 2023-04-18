@@ -1,0 +1,248 @@
+.ip {
+  &-page {
+    height: 200vh;
+    background-color: $originalPink;
+  }
+
+  &-container {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    padding: 0 5rem;
+    animation: intro 1s ease-in-out;
+
+    & .Typewriter {
+      transform: translateY(100%);
+
+      & span {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 13rem;
+    position: absolute;
+    transform: translateY(-25%);
+
+    &-empty {
+      color: transparent;
+      -webkit-text-stroke: .3rem $white;
+    }
+
+    &-full {
+      color: $white;
+      animation: title 4s ease-in-out infinite;
+    }
+  }
+
+  &-subtitle {
+    font-size: 4rem;
+    transform: translateY(100%);
+  }
+}
+
+.cp {
+  &-page {
+    height: 500vh;
+    width: 100%;
+  }
+
+  &-img {
+    width: 20rem;
+
+    &-translateL {
+      transform: translateX(-100%);
+    }
+
+    &-translateR {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.c {
+  &-page {
+    position: absolute;
+    top: 100vh;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.co {
+  &-container {
+    &-false {
+      opacity: 0;
+    }
+  }
+}
+
+.cto {
+  &-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.np {
+  &-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30rem;
+  }
+
+  &-card {
+    margin: 20rem 0;
+    position: relative;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $originalPink;
+
+    &-parallax {
+      position: absolute;
+      height: 25rem;
+      width: 25rem;
+      border-radius: 30rem;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 70%);
+    }
+
+    &-img {
+      position: absolute;
+      height: 23rem;
+      width: 23rem;
+      border-radius: 30rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $white;
+      object-fit: cover;
+      filter: grayscale(1);
+    }
+
+    &-text {
+      height: 23rem;
+      width: 23rem;
+      border-radius: 30rem;
+      background-color: rgba(255, 255, 255, .5);
+      position: absolute;
+      font-size: 5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .np-card-img {
+        filter: grayscale(0);
+      }
+    }
+
+    &-donation {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 13%);
+    }
+  }
+}
+
+.is {
+  &-container {
+    height: 10rem;
+    margin: 4rem;
+    width: 10rem;
+    position: relative;
+  }
+
+  &-content {
+    position: absolute;
+    top: -4rem;
+    left: -4rem;
+    height: 18rem;
+    width: 18rem;
+    cursor: pointer;
+
+    &:hover {
+      animation: rotation 2s infinite;
+    }
+
+    & tspan {
+      fill: $white;
+      font-size: 2rem;
+    }
+  }
+}
+
+.dp {
+  &-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -34rem;
+    z-index: 20;
+    position: relative;
+  }
+
+  &-card {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    background-color: $originalPink;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 20rem;
+
+      &-text {
+        font-size: 4rem;
+        color: $white;
+        margin-bottom: 2rem;
+      }
+
+      &-icon {
+        display: flex;
+        position: relative;
+      }
+    }
+  }
+
+  &-end {
+    background-color: white;
+    height: 40vh;
+    margin-top: -26rem;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem 5rem;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 4rem;
+    }
+  }
+}

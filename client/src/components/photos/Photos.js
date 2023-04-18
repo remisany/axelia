@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {useNavigate} from "react-router-dom";
 
 //import components
 import Photo from './Photo';
@@ -19,11 +20,12 @@ const Photos = ({env}) => {
     const [loading, setLoading] = useState(true)
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const photos = photoXYZ[env]
 
     useEffect(() => {
-        imageServices.list(env).then(response => setUrls(response))
+        imageServices.list(env).then(response => response === 'error' ? navigate('erreur') : setUrls(response))
     },[])
 
     const getUrls = async () => {

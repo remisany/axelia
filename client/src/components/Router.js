@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 const Home = lazy(() => import("./home/Home"));
 const Forest = lazy(() => import("./scenes/Forest"));
 const Image = lazy(() => import("./photos/AddImage"));
+const Error = lazy(() => import("./commons/Error"));
 
 const Router = () => {
     return (
@@ -12,8 +13,9 @@ const Router = () => {
             <Suspense fallback={null}>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/forest" element={<Forest/>}/>
+                    <Route path="/foret" element={<Forest/>}/>
                     <Route path="/image" element={<Image/>}/>
+                    <Route path="/erreur" element={<Error/>}/>
                 </Routes>
             </Suspense>
         </BrowserRouter>

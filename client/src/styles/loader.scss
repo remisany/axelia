@@ -12,19 +12,19 @@
 
   &-player {
     margin-top: -7.5rem;
-    height: 50rem;
-    width: 50rem;
+    height: 35rem;
+    width: 35rem;
   }
 
   &-progressBar {
     display: flex;
     align-items: center;
     position: absolute;
-    margin-top: 15rem;
+    margin-top: 10rem;
 
     & .MuiLinearProgress-root {
-      height: 1rem;
-      width: 50rem;
+      height: .8rem;
+      width: 20rem;
       background-color: #000;
       border-radius: .5rem;
 
@@ -35,7 +35,7 @@
 
     & .MuiTypography-root {
       margin-left: 2rem;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       min-width: 5rem;
     }
@@ -50,6 +50,30 @@
       opacity: 0;
       transform: scale(0.9);
       transition: opacity 500ms, transform 500ms;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .lc {
+    &-player {
+      height: 50rem;
+      width: 50rem;
+    }
+
+    &-progressBar {
+      margin-top: 15rem;
+
+      & .MuiLinearProgress-root {
+        height: 1rem;
+        width: 50rem;
+      }
+
+      & .MuiTypography-root {
+        margin-left: 2rem;
+        font-size: 2rem;
+        min-width: 5rem;
+      }
     }
   }
 }
