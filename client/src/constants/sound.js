@@ -1,7 +1,7 @@
-import {Howl, Howler} from "howler";
+import {Howl, Howler} from 'howler';
 
 //import actions
-import {soundActions} from "../actions/soundActions";
+import {soundActions} from '../actions/soundActions';
 
 const sounds = {
     forest: 'https://lasonotheque.org/UPLOAD/mp3/2715.mp3'

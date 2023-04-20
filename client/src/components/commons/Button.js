@@ -52,7 +52,7 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
     return (
         <Fragment>
             <a-assets>
-                <img id={'btnImg_' + id} src={image} alt='icon button'/>
+                <img id={`btnImg_${id}`} src={image} alt='icon button'/>
             </a-assets>
 
             <a-box
@@ -65,7 +65,7 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
                 color={colors.originalPink}
                 id={id}
             >
-                <a-image src={'#btnImg_' + id} height='0.6' width='0.6' position='0 0 0.1'></a-image>
+                <a-image src={`#btnImg_${id}`} height='0.6' width='0.6' position='0 0 0.1'></a-image>
             </a-box>
         </Fragment>
     )

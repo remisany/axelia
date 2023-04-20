@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import 'aframe'
-//import 'aframe-inspector'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import {useDispatch} from 'react-redux';
 
@@ -12,10 +11,10 @@ import Photos from '../photos/Photos';
 import Camera from '../commons/Camera';
 
 //import actions
-import {loaderActions} from "../../actions/loaderActions";
+import {loaderActions} from '../../actions/loaderActions';
 
 const Scene = ({env, envRef, model, rotation}) => {
-    const rotationRef = rotation[0] + " " + rotation[1] + " " + rotation[2]
+    const rotationRef = `${rotation[0]} ${rotation[1]} ${rotation[2]}`
 
     const dispatch = useDispatch()
 
@@ -29,12 +28,12 @@ const Scene = ({env, envRef, model, rotation}) => {
     }, [])
 
     return (
-        <a-scene inspector raycaster='objects: [data-clickable]'>
+        <a-scene raycaster='objects: [data-clickable]'>
             <a-assets>
                 <img id='sky' src={sky} alt='background'/>
             </a-assets>
 
-            <a-entity shadow='cast:true' position="0 0 0" rotation={rotationRef} ref={envRef}></a-entity>
+            <a-entity shadow='cast:true' position='0 0 0' rotation={rotationRef} ref={envRef}></a-entity>
 
             <Photos env={env}/>
 

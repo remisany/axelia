@@ -24,7 +24,7 @@ function appearance (buttonRef, position) {
 }
 
 function disappearance (buttonRef, position, active) {
-    const scaleTo = active ? "1.4 1.4 1.4" : ".6 .6 .6"
+    const scaleTo = active ? '1.4 1.4 1.4' : '.6 .6 .6'
     const positionFirstFrom = `${position[0]} ${position[1]} ${position[2]}`
     const positionFirstTo = active ? `${position[0]} ${position[1] - .2} ${position[2]}` : `${position[0]} ${position[1] + .2} ${position[2]}`
     const positionSecondTo = active ?  `${position[0]} ${position[1] + 10} ${position[2]}` : `${position[0]} ${position[1] - 10} ${position[2]}`

@@ -1,0 +1,424 @@
+@media (min-width: 480px) {
+  .ip {
+    &-title {
+      font-size: 5rem;
+    }
+
+    &-typewriter {
+      height: 3.5rem;
+    }
+
+    &-container {
+      & .Typewriter {
+        & span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .cp {
+    &-img {
+      width: 12rem;
+    }
+  }
+
+  .np {
+    &-card {
+      height: 15rem;
+      width: 15rem;
+      margin: 10rem 0;
+
+      &-parallax {
+        height: 15rem;
+        width: 15rem;
+      }
+
+      &-img {
+        height: 13.75rem;
+        width: 13.75rem;
+      }
+
+      &-text {
+        height: 13.75rem;
+        width: 13.75rem;
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .dp {
+    &-page {
+      margin-top: -18.25rem;
+    }
+
+    &-card {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+}
+
+//large phone landscape
+@media (min-width: 768px) and (orientation: landscape) {
+  .ip {
+    &-title {
+      font-size: 6.5rem;
+    }
+
+    &-typewriter {
+      height: 3.8rem;
+    }
+
+    &-container {
+      & .Typewriter {
+        & span {
+          font-size: 2.25rem;
+        }
+      }
+    }
+  }
+
+  .cp {
+    &-page {
+      height: 520vh;
+    }
+  }
+
+  .dp {
+    &-card {
+      &-content {
+        &-text {
+          font-size: 2.8rem;
+        }
+      }
+    }
+
+    &-end {
+      height: 90vh;
+      bottom: 0;
+
+      &-text {
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  .is {
+    &-container {
+      height: 8rem;
+      margin: 2rem 3rem;
+      width: 8rem;
+    }
+
+    &-content {
+      top: -2rem;
+      left: -2rem;
+      height: 12rem;
+      width: 12rem;
+
+      & tspan {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+//tablets
+@media (min-width: 768px) and (orientation: portrait) {
+  .ip {
+    &-title {
+      font-size: 14rem;
+
+      &-empty {
+        color: transparent;
+        -webkit-text-stroke: .18rem $white;
+      }
+    }
+
+    &-typewriter {
+      height: 15rem;
+    }
+
+    &-container {
+      & .Typewriter {
+        & span {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .cp {
+    &-page {
+      height: 200vh;
+    }
+
+    &-img {
+      width: 18rem;
+    }
+  }
+
+  .np {
+    &-card {
+      height: 21rem;
+      width: 21rem;
+      margin: 20rem 0;
+
+      &-parallax {
+        height: 21rem;
+        width: 21rem;
+      }
+
+      &-img {
+        height: 19rem;
+        width: 19rem;
+      }
+
+      &-text {
+        height: 19rem;
+        width: 19rem;
+        font-size: 3.9rem;
+      }
+    }
+  }
+
+  .dp {
+    &-page {
+      height: 70vh;
+      margin-top: -31.5rem;
+    }
+
+    &-card {
+      height: 2rem;
+      width: 2rem;
+
+      &-content {
+        top: 11rem;
+
+        &-text {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    &-end {
+      height: 30vh;
+      bottom: 0;
+      padding: 2rem;
+
+      &-text {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .is {
+    &-container {
+      height: 10rem;
+      margin: 4rem;
+      width: 10rem;
+    }
+
+    &-content {
+      top: -4rem;
+      left: -4rem;
+      height: 18rem;
+      width: 18rem;
+
+      & tspan {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+//small screens
+@media (min-width: 1024px) {
+  .ip {
+    &-title {
+      font-size: 9rem;
+
+      &-empty {
+        color: transparent;
+        -webkit-text-stroke: .2rem $white;
+      }
+    }
+
+    &-typewriter {
+      height: 7rem;
+    }
+
+    &-container {
+      & .Typewriter {
+        & span {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .cp {
+    &-page {
+      height: 300vh;
+    }
+
+    &-img {
+      width: 19rem;
+    }
+  }
+
+  .np {
+    &-card {
+      height: 21rem;
+      width: 21rem;
+      margin: 18rem 0;
+
+      &-parallax {
+        height: 21rem;
+        width: 21rem;
+      }
+
+      &-img {
+        height: 19rem;
+        width: 19rem;
+      }
+
+      &-text {
+        height: 19rem;
+        width: 19rem;
+        font-size: 3.9rem;
+      }
+    }
+  }
+
+  .dp {
+    &-page {
+      height: 85vh;
+      margin-top: -29.75rem;
+    }
+
+    &-card {
+      height: 2.5rem;
+      width: 2.5rem;
+
+      &-content {
+        top: 11rem;
+
+        &-text {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    &-end {
+      height: 34vh;
+      bottom: 0;
+      padding: 2rem;
+
+      &-text {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .is {
+    &-container {
+      height: 10rem;
+      margin: 4rem;
+      width: 10rem;
+    }
+
+    &-content {
+      top: -4rem;
+      left: -4rem;
+      height: 18rem;
+      width: 18rem;
+
+      & tspan {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+//large screens
+@media (min-width: 1200px) {
+  .ip {
+    &-title {
+      font-size: 11rem;
+    }
+
+    &-typewriter {
+      height: 9rem;
+    }
+
+    &-container {
+      & .Typewriter {
+        & span {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .cp {
+    &-page {
+      height: 500vh;
+    }
+
+    &-img {
+      width: 20rem;
+    }
+  }
+
+  .np {
+    &-card {
+      margin: 20rem 0;
+      height: 25rem;
+      width: 25rem;
+
+      &-parallax {
+        height: 25rem;
+        width: 25rem;
+      }
+
+      &-img {
+        height: 23rem;
+        width: 23rem;
+      }
+
+      &-text {
+        height: 23rem;
+        width: 23rem;
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .dp {
+    &-page {
+      height: 100vh;
+      margin-top: -34rem;
+    }
+
+    &-card {
+      height: 3rem;
+      width: 3rem;
+
+      &-content {
+        top: 20rem;
+      }
+    }
+
+    &-end {
+      height: 40vh;
+      margin-top: -26rem;
+      padding: 2rem 5rem;
+
+      &-text {
+        font-size: 4rem;
+      }
+    }
+  }
+}

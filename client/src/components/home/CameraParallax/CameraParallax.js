@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 //import assets
 import Navigation from '../Navigation';
-import Camera from "./Camera";
-import CameraTranslation from "./CameraTranslation";
+import Camera from './Camera';
+import CameraTranslation from './CameraTranslation';
 
 const CameraParallax = () => {
     const [activeTransition, setActiveTransition] = useState(false)

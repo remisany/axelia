@@ -13,30 +13,36 @@
     justify-content: center;
     flex-direction: column;
     color: $white;
-    padding: 0 5rem;
+    padding: 0 2rem;
     animation: intro 1s ease-in-out;
 
     & .Typewriter {
-      transform: translateY(100%);
-
       & span {
-        font-size: 4rem;
+        font-size: 2rem;
       }
     }
   }
 
+  &-typewriter {
+    height: 8rem;
+  }
+
   &-title {
-    font-size: 13rem;
-    position: absolute;
-    transform: translateY(-25%);
+    font-size: 7rem;
+
+    &-container {
+      position: relative;
+    }
 
     &-empty {
       color: transparent;
-      -webkit-text-stroke: .3rem $white;
+      -webkit-text-stroke: .15rem $white;
     }
 
     &-full {
       color: $white;
+      position: absolute;
+      top: 0;
       animation: title 4s ease-in-out infinite;
     }
   }
@@ -54,15 +60,7 @@
   }
 
   &-img {
-    width: 20rem;
-
-    &-translateL {
-      transform: translateX(-100%);
-    }
-
-    &-translateR {
-      transform: translateX(100%);
-    }
+    width: 8rem;
   }
 }
 
@@ -75,14 +73,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-}
-
-.co {
-  &-container {
-    &-false {
-      opacity: 0;
-    }
   }
 }
 

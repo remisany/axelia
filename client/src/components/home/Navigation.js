@@ -1,15 +1,17 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {Parallax} from "react-scroll-parallax";
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import {Parallax} from 'react-scroll-parallax';
 
 //import constants
-import {thumbnails} from "../../constants/thumbnails";
-import {sound} from "../../constants/sound";
+import {thumbnails} from '../../constants/thumbnails';
+import {sound} from '../../constants/sound';
 
 //import selectors
-import {soundSelector} from "../../reducers/selectors";
-import Donation from "./Donation";
+import {soundSelector} from '../../reducers/selectors';
+
+//import components
+import Donation from './Donation';
 
 const Navigation = () => {
     const navigate = useNavigate()

@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useRef, useState} from 'react';
 import * as THREE from 'three';
 import {useDispatch} from 'react-redux';
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
 //import components
 import Button from './Button';
@@ -59,12 +59,12 @@ const Camera = ({env}) => {
     return (
         <Fragment>
             <a-camera ref={cameraRef} wasd-controls='enabled: false'>
-                {!following && <a-cursor color={cursorColor} scale="2 2 2"></a-cursor>}
+                {!following && <a-cursor color={cursorColor} scale='2 2 2'></a-cursor>}
             </a-camera>
 
             {!following && <Fragment>
-                <Button type={buttons.museum} id={'1_' + env} action={home} animate={animate} setAnimate={setAnimate} setCursorColor={setCursorColor}/>
-                <Button type={buttons.enter} id={'2_' + env} action={enter} animate={animate} setAnimate={setAnimate} setCursorColor={setCursorColor}/>
+                <Button type={buttons.museum} id={`1_${env}`} action={home} animate={animate} setAnimate={setAnimate} setCursorColor={setCursorColor}/>
+                <Button type={buttons.enter} id={`2_${env}`} action={enter} animate={animate} setAnimate={setAnimate} setCursorColor={setCursorColor}/>
             </Fragment>}
         </Fragment>
     )

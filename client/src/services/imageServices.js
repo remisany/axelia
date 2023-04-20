@@ -1,5 +1,5 @@
 //import services
-import {request} from "./request";
+import {request} from './request';
 
 export const imageServices = {
     add,
@@ -22,7 +22,7 @@ function list(collection) {
         response.data.map(url => url.replace(process.env.REACT_APP_FB, `${process.env.REACT_APP_API_HOST}/proxy`))
     )
 
-    const catchCallback = () => "error"
+    const catchCallback = () => 'error'
 
     return request(
         'POST',

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const request = async (method, url, success, rejected, catchCallback, values)=> {
     try {

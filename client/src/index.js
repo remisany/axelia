@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import axios from "axios";
-import {Provider} from "react-redux";
+import axios from 'axios';
+import {Provider} from 'react-redux';
 
 //import components
-import Router from "./components/Router";
+import Router from './components/Router';
 
 //import reportWebVitals
 import reportWebVitals from './reportWebVitals';
@@ -13,10 +13,10 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 //import config
-import {store} from "./config/redux";
+import {store} from './config/redux';
 
 //import styles
-import "./styles/styles.scss"
+import './styles/styles.scss'
 
 //config url
 axios.defaults.baseURL = process.env.REACT_APP_API_HOST
