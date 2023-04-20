@@ -29,7 +29,13 @@ const Donation = () => {
                 setScale([-8.5, 60])
                 setSize([120, 55, 80])
                 break
+            case (width >= 480):
+                setScale([-8.5, 55])
+                setSize([90, 40, 60])
+                break
             default:
+                setScale([-8.5, 30])
+                setSize([10, 20, 30])
                 break
         }
     }
