@@ -55,7 +55,7 @@
 
 .cp {
   &-page {
-    height: 300vh;
+    height: 200vh;
     width: 100%;
   }
 
@@ -67,7 +67,7 @@
 .c {
   &-page {
     position: absolute;
-    top: 70vh;
+    top: 100vh;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -95,7 +95,7 @@
   }
 
   &-card {
-    margin: 20rem 0;
+    margin: 15rem 0;
     position: relative;
     height: 10rem;
     width: 10rem;
@@ -158,38 +158,40 @@
 
 .is {
   &-container {
-    height: 10rem;
-    margin: 4rem;
-    width: 10rem;
+    height: 6.5em;
+    margin: 1.5rem;
+    width: 6.5rem;
     position: relative;
+
+    &:hover {
+      .is-content {
+        animation: rotation 2s infinite;
+      }
+    }
   }
 
   &-content {
     position: absolute;
-    top: -4rem;
-    left: -4rem;
-    height: 18rem;
-    width: 18rem;
+    top: -1.5rem;
+    left: -1.5rem;
+    height: 9.5rem;
+    width: 9.5rem;
     cursor: pointer;
-
-    &:hover {
-      animation: rotation 2s infinite;
-    }
 
     & tspan {
       fill: $white;
-      font-size: 2rem;
+      font-size: 1rem;
     }
   }
 }
 
 .dp {
   &-page {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: -34rem;
+    margin-top: -20.5rem;
     z-index: 20;
     position: relative;
   }
@@ -205,10 +207,10 @@
       flex-direction: column;
       align-items: center;
       position: absolute;
-      top: 20rem;
+      top: 10rem;
 
       &-text {
-        font-size: 4rem;
+        font-size: 3.5rem;
         color: $white;
         margin-bottom: 2rem;
       }
@@ -222,13 +224,13 @@
 
   &-end {
     background-color: white;
-    height: 40vh;
-    margin-top: -26rem;
+    height: 25vh;
+    margin-top: -15rem;
     width: 100%;
     z-index: 10;
     display: flex;
     align-items: flex-end;
-    padding: 2rem 5rem;
+    padding: 2rem;
     justify-content: space-between;
 
     &-text {

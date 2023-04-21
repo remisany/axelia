@@ -37,6 +37,12 @@
     }
   }
 
+  .c {
+    &-page {
+      height: 100vh;
+    }
+  }
+
   .cp {
     &-img {
       width: 12rem;
@@ -73,6 +79,7 @@
 
   .dp {
     &-page {
+      height: 100vh;
       margin-top: -18.25rem;
     }
 
@@ -81,6 +88,8 @@
       width: 1.5rem;
 
       &-content {
+        top: 20rem;
+
         &-text {
           font-size: 3rem;
           margin-bottom: 1rem;

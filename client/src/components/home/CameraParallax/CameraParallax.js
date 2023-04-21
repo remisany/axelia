@@ -9,8 +9,10 @@ const CameraParallax = () => {
     const [activeTransition, setActiveTransition] = useState(false)
 
     const onScroll = () => {
-        const reference = window.innerHeight
+        const reference = document.documentElement.clientHeight;
         const position = window.scrollY
+
+        console.log(reference)
 
         setActiveTransition(position > reference)
     }
