@@ -12,8 +12,6 @@ const CameraParallax = () => {
         const reference = document.documentElement.clientHeight;
         const position = window.scrollY
 
-        console.log(reference)
-
         setActiveTransition(position > reference)
     }
 

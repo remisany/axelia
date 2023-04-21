@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {Parallax} from 'react-scroll-parallax';
 
 //import components
@@ -7,6 +7,8 @@ import Icons from './Icons';
 const Donation = () => {
     const [scale, setScale] = useState([])
     const [size, setSize] = useState([])
+
+    let first = true
 
     const getScale = () => {
         const width = window.innerWidth
@@ -40,9 +42,24 @@ const Donation = () => {
         }
     }
 
+    const handleResize = () => {
+        console.log("ok")
+
+        if (first) {
+            first = false
+        } else {
+            console.log("yes")
+            window.scrollTo(0, 0);
+            window.location.reload()
+        }
+    }
+
     useEffect(() => {
+        const resizeObserver = new ResizeObserver(handleResize)
+        resizeObserver.observe(document.body)
+
         getScale()
-    },[window.innerWidth, window.document.documentElement.clientHeight])
+    },[])
 
     return (
         size.length &&
