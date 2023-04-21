@@ -34,7 +34,7 @@ const Donation = () => {
                 setSize([90, 40, 60])
                 break
             default:
-                setScale([-8.5, 85])
+                setScale([-8.5, 90])
                 setSize([95, 45, 60])
                 break
         }

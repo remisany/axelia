@@ -36,7 +36,7 @@
 
     &-empty {
       color: transparent;
-      -webkit-text-stroke: .15rem $white;
+      -webkit-text-stroke: .1rem $white;
     }
 
     &-full {
@@ -55,7 +55,7 @@
 
 .cp {
   &-page {
-    height: 200vh;
+    height: 240vh;
     width: 100%;
   }
 
@@ -207,7 +207,7 @@
       flex-direction: column;
       align-items: center;
       position: absolute;
-      top: 10rem;
+      top: 8rem;
 
       &-text {
         font-size: 3.5rem;
@@ -224,8 +224,8 @@
 
   &-end {
     background-color: white;
-    height: 25vh;
-    margin-top: -15rem;
+    height: 50vh;
+    margin-top: -45rem;
     width: 100%;
     z-index: 10;
     display: flex;

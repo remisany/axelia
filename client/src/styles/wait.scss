@@ -35,6 +35,12 @@
         }
       }
     }
+
+    &-title {
+      &-empty {
+        -webkit-text-stroke: .15rem $white;
+      }
+    }
   }
 
   .c {
