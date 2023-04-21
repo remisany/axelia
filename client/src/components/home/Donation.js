@@ -10,7 +10,7 @@ const Donation = () => {
 
     const getScale = () => {
         const width = window.innerWidth
-        const height = window.innerHeight
+        const height = window.document.documentElement.clientHeight
 
         switch (true) {
             case (width >= 1200):
@@ -42,7 +42,7 @@ const Donation = () => {
 
     useEffect(() => {
         getScale()
-    },[])
+    },[window.innerWidth, window.document.documentElement.clientHeight])
 
     return (
         size.length &&
