@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {Parallax} from 'react-scroll-parallax';
 
 //import components
@@ -43,12 +43,9 @@ const Donation = () => {
     }
 
     const handleResize = () => {
-        console.log("ok")
-
         if (first) {
             first = false
         } else {
-            console.log("yes")
             window.scrollTo(0, 0);
             window.location.reload()
         }
