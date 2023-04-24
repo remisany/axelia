@@ -3,13 +3,15 @@ import {ParallaxProvider} from 'react-scroll-parallax';
 
 //import components
 import Intro from './Intro';
-import CameraParallax from './CameraParallax/CameraParallax';
+import NNavigation from "./NNavigation";
+import NDonation from "./NDonation";
 
 const Home = () => {
     return (
         <ParallaxProvider scrollAxis='vertical' >
             <Intro/>
-            <CameraParallax/>
+            <NNavigation/>
+            <NDonation/>
         </ParallaxProvider>
     )
 }
