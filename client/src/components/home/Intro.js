@@ -22,9 +22,10 @@ const Intro = () => {
                         options={{
                             strings: [
                                 'Un musée en réalité virtuelle exposant ses photographies...',
-                                'Vous avez le choix entre quatre mondes...',
+                                'Vous avez le choix entre trois mondes...',
                                 'Vous pouvez aussi mettre le son pour profiter d\'une ambiance sonore...',
-                                'On y va ? Descendez...'
+                                'N\'hésitez pas à revenir dans un monde, les photos ont peut-être changé...',
+                                'On y va ? Descendez !'
                             ],
                             autoStart: true,
                             loop: true
