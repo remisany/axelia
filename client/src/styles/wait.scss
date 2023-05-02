@@ -34,19 +34,19 @@
   .ntp {
     &-dest {
       &-env {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 4.5rem;
       }
 
       &-point {
-        height: 1.8rem;
-        width: 1.8rem;
+        height: 1.6rem;
+        width: 1.6rem;
       }
     }
 
     &-content {
       &-hide {
-        height: calc(48.5% - 1rem);
+        height: calc(49% - 1rem);
       }
     }
   }
@@ -358,6 +358,20 @@
       & span {
         font-size: 10rem;
         -webkit-text-stroke: .2rem $originalPink;
+      }
+    }
+  }
+
+  .ntp {
+    &-dest {
+      &-env {
+        font-size: 4rem;
+        margin-top: 1rem;
+      }
+
+      &-point {
+        height: 2rem;
+        width: 2rem;
       }
     }
   }
