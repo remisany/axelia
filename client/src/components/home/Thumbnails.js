@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import {useNavigate} from "react-router-dom";
 
-//import assets
-import {NThumbnails} from "../../constants/thumbnails";
+//import constants
+import {thumbnails} from "../../constants/thumbnails";
 
 const Thumbnails = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='tp-container'>
-            {NThumbnails.map((thumbnail, indexT) => (
-                <div key={indexT} className='tp-content'>
-                    <img src={thumbnail.src} alt={thumbnail.alt}/>
-                </div>
+            {thumbnails.map((thumbnail, indexT) => (
+                <Fragment key={indexT}>
+                    <div className='tp-content'>
+                        <div className='tp-clickable' onClick={() => navigate(thumbnail.url)}></div>
+                        <img src={thumbnail.src} alt={thumbnail.alt}/>
+                    </div>
+                </Fragment>
             ))}
         </div>
     )

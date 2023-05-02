@@ -5,6 +5,9 @@
   font-family: 'Playfair Display', serif;
 }
 
-body {
+#root {
+  width: 100%;
   overflow-x: hidden;
+  position: relative;
+  height: 530vh;
 }

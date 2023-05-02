@@ -33,9 +33,9 @@ const Scene = ({env, envRef, model, rotation}) => {
                 <img id='sky' src={sky} alt='background'/>
             </a-assets>
 
-            <a-entity shadow='cast:true' position='0 -13 0' scale='0.003 0.003 0.003' rotation={rotationRef} ref={envRef}></a-entity>
+            <a-entity shadow='cast:true' position='0 -35 0' rotation={rotationRef} ref={envRef}></a-entity>
 
-            <a-entity light='type: ambient; color: #C2C19B'></a-entity>
+            <a-entity light='type: ambient; color: #C2C19B; intensity: .6'></a-entity>
             <a-entity light='type: directional; color: #FFF; intensity: 1' position='-0.5 1 1'></a-entity>
         </a-scene>
     )

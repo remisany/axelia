@@ -1,9 +1,11 @@
-import Part1 from '../assets/thumbnails/part1.png'
-import Part2 from '../assets/thumbnails/part2.png'
-import Part3 from '../assets/thumbnails/part3.png'
+import Forest from '../assets/thumbnails/forest.png'
+import Mountain from '../assets/thumbnails/mountain.png'
+import Desert from '../assets/thumbnails/desert.png'
+import Lake from '../assets/thumbnails/lake.png'
 
-export const NThumbnails = [
-    {env: 'forest', src: Part1, url: 'foret', alt: 'thumbnail forest environment'},
-    {env: 'forest', src: Part2, url: 'foret', alt: 'thumbnail city environment'},
-    {env: 'forest', src: Part3, url: 'foret', alt: 'thumbnail funfair environment'},
+export const thumbnails = [
+    {env: 'forest', src: Forest, url: '/foret', alt: 'thumbnail forest environment'},
+    {env: 'mountain', src: Mountain, url: '/montagne', alt: 'thumbnail mountain environment'},
+    {env: 'desert', src: Desert, url: '/desert', alt: 'thumbnail desrt environment'},
+    {env: 'lake', src: Lake, url: '/lac', alt: 'thumbnail lake environment'},
 ]

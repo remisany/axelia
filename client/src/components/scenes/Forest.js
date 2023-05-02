@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useRef, useState} from 'react';
 import {useDispatch} from 'react-redux';
 
 //import assets
-import forest from '../../assets/models/part1.glb';
+import forest from '../../assets/models/forest.glb';
 
 //import components
 import Scene from './Scene';
