@@ -11,9 +11,6 @@ const NavigationExt = ({details, className, translate}) => {
     const setClass = () => {
         const position = window.scrollY
 
-        console.log(start)
-        console.log(position)
-
         position > start*details.start.class ? setFirst(true) : setFirst(false)
         position > start*details.last.class ? setLast(true) : setLast(false)
     }

@@ -5,7 +5,7 @@ const NavigationBottom = () => {
     const [details, setDetails] = useState({
         start: {env: "Lac"},
         last: {env: "Désert"},
-        scroll: {}
+        scroll: {start: 2, end: 4}
     })
 
     const getDetails = () => {
@@ -17,7 +17,7 @@ const NavigationBottom = () => {
                 setDetails(prev => ({start: {...prev.start, class: 2.56}, last: {...prev.last, class: 2.18}, scroll: {start: 1.25, end: 2.75}}))
                 break
             case (width >= 480):
-                setDetails(prev => ({start: {...prev.start, class: 2.84}, last: {...prev.last, class: 2.34}, scroll: {start: 1.1, end: 3.1}}))
+                setDetails(prev => ({start: {...prev.start, class: 2.85}, last: {...prev.last, class: 2.34}, scroll: {start: 1.1, end: 3.1}}))
                 break
             default:
                 setDetails(prev => ({start: {...prev.start, class: 2.55}, last: {...prev.last, class: 2.25}, scroll: {start: 1.5, end: 2.7}}))

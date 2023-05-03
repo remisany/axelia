@@ -5,7 +5,7 @@ const NavigationTop = () => {
     const [details, setDetails] = useState({
         start: {env: "Forêt"},
         last: {env: "Montagne"},
-        scroll: {}
+        scroll: {start: 2, end: 4}
     })
 
     const getDetails = () => {
