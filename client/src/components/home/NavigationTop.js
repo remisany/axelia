@@ -1,68 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationExt from "./NavigationExt";
 
 const NavigationTop = () => {
+    const [details, setDetails] = useState({
+        start: {env: "Forêt"},
+        last: {env: "Montagne"},
+        scroll: {}
+    })
+
+    const getDetails = () => {
+        const width = window.innerWidth
+        const height = window.document.documentElement.clientHeight
+
+        switch (true) {
+            case (width >= 768 && width < height):
+                setDetails(prev => ({start: {...prev.start, class: 1.51}, last: {...prev.last, class: 1.84}, scroll: {start: 1.35, end: 2.65}}))
+                break
+            case (width >= 480):
+                setDetails(prev => ({start: {...prev.start, class: 1.14}, last: {...prev.last, class: 1.65}, scroll: {start: .9, end: 2.9}}))
+                break
+            default:
+                setDetails(prev => ({start: {...prev.start, class: 1.55}, last: {...prev.last, class: 1.85}, scroll: {start: 1.4, end: 2.6}}))
+                break
+        }
+    }
+
+    useEffect(() => {
+        getDetails()
+    },[])
+
     return (
         <NavigationExt
-            details={{
-                start: {
-                    env: "Forêt",
-                    class: 1.24
-                },
-                last: {
-                    env: "Montagne",
-                    class: 1.69
-                },
-                scroll: {
-                    start: 1.02,
-                    end: 2.8
-                }
-            }}
+            details={details}
             translate={[-100, 0]}
         />
     )
 }
 
 export default NavigationTop
-
-/*
-
-    let first = true
-
-    const getScale = () => {
-        const width = window.innerWidth
-        const height = window.document.documentElement.clientHeight
-
-        switch (true) {
-            case (width >= 1200):
-                break
-            case (width >= 1024):
-                break
-            case (width >= 768 && width < height):
-                break
-            case (width >= 768 && width > height):
-                break
-            case (width >= 480):
-                break
-            default:
-                break
-        }
-    }
-
-    const handleResize = () => {
-        if (first) {
-            first = false
-        } else {
-            window.scrollTo(0, 0);
-            window.location.reload()
-        }
-    }
-
-    useEffect(() => {
-        const resizeObserver = new ResizeObserver(handleResize)
-        resizeObserver.observe(document.body)
-
-        getScale()
-    },[])
-
- */

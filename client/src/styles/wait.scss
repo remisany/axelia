@@ -17,14 +17,6 @@
     }
   }
 
-  .tp {
-    &-content {
-      & img {
-        width: 22rem;
-      }
-    }
-  }
-
   .is {
     &-container {
       margin: 2rem;
@@ -240,7 +232,7 @@
 
     &-content {
       & img {
-        width: 45rem;
+        height: 28rem;
       }
     }
   }
@@ -310,6 +302,20 @@
     }
   }
 
+  .ntp {
+    &-dest {
+      &-env {
+        font-size: 3rem;
+        margin-top: 2.5rem;
+      }
+
+      &-point {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+
   .tp {
     &-clickable {
       width: 48rem;
@@ -317,15 +323,7 @@
 
     &-content {
       & img {
-        width: 38rem;
-      }
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        margin-top: 1.5rem;
+        height: 27rem;
       }
     }
   }
@@ -347,6 +345,14 @@
         & span {
           font-size: 4rem;
         }
+      }
+    }
+  }
+
+  .tp {
+    &-content {
+      & img {
+        height: 24rem;
       }
     }
   }
