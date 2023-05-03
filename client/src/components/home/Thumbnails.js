@@ -12,8 +12,8 @@ const Thumbnails = () => {
             {thumbnails.map((thumbnail, indexT) => (
                 <Fragment key={indexT}>
                     <div className='tp-content'>
-                        {/*<div className='tp-clickable' onClick={() => navigate(thumbnail.url)}></div>*/}
-                        <img src={thumbnail.src} alt={thumbnail.alt} onClick={() => console.log("ok")}/>
+                        <div className='tp-clickable' onClick={() => navigate(thumbnail.url)}></div>
+                        <img src={thumbnail.src} alt={thumbnail.alt}/>
                     </div>
                 </Fragment>
             ))}

@@ -27,11 +27,13 @@ const Navigation = () => {
 
     return (
         <div className='nnp-page'>
+            <NavigationTop/>
+
             <div className='nnp-stencil'>
-                <NavigationTop/>
                 <img src={Stencil} alt='camera icon'/>
-                <NavigationBottom/>
             </div>
+
+            <NavigationBottom/>
 
             <Thumbnails/>
         </div>
