@@ -33,6 +33,7 @@ const NavigationTop = () => {
         <NavigationExt
             details={details}
             translate={[-100, 0]}
+            className='ntp-container-first'
         />
     )
 }
