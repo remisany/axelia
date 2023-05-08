@@ -15,7 +15,7 @@ const Navigation = () => {
         if (first) {
             first = false
         } else {
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 0)
             window.location.reload()
         }
     }

@@ -18,6 +18,8 @@ const Forest = () => {
 
     const forestRef = useRef(null)
 
+    const env = 'forest'
+
     useEffect(() => {
         loaderActions.raz(dispatch).then(() => setReset(true))
     }, [])
@@ -25,26 +27,14 @@ const Forest = () => {
     return (
         reset && <Fragment>
             <Scene
-                env='forest'
+                env={env}
                 envRef={forestRef}
                 model={forest}
                 rotation={[0, -70, 0]}
             />
-            <LoaderContainer length={14}/>
+            <LoaderContainer length={14} env={env}/>
         </Fragment>
     )
 }
 
 export default Forest
-
-/*
-
-            <Scene
-                env='forest'
-                envRef={forestRef}
-                model={forest}
-                rotation={[0, -70, 0]}
-            />
-
-<LoaderContainer length={14}/>
- */

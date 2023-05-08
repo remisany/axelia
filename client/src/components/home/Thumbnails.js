@@ -1,13 +1,13 @@
 import React, {Fragment, useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
 //import constants
-import {thumbnails} from "../../constants/thumbnails";
-import {sound} from "../../constants/sound";
+import {thumbnails} from '../../constants/thumbnails';
+import {sound} from '../../constants/sound';
 
 //import selectors
-import {soundSelector} from "../../reducers/selectors";
+import {soundSelector} from '../../reducers/selectors';
 
 const Thumbnails = () => {
     const dispatch = useDispatch()
@@ -15,11 +15,6 @@ const Thumbnails = () => {
     const navigate = useNavigate()
 
     const soundScene = useSelector(soundSelector)
-
-    const visit = (env, url) => {
-        navigate(url)
-        sound.play(dispatch, env)
-    }
 
     useEffect(() => {
         sound.stop(dispatch, soundScene.soundId)
@@ -30,7 +25,7 @@ const Thumbnails = () => {
             {thumbnails.map((thumbnail, indexT) => (
                 <Fragment key={indexT}>
                     <div className='tp-content'>
-                        <div className='tp-clickable' onClick={() => visit(thumbnail.env, thumbnail.url)}></div>
+                        <div className='tp-clickable' onClick={() => navigate(thumbnail.url)}></div>
                         <img src={thumbnail.src} alt={thumbnail.alt}/>
                     </div>
                 </Fragment>
