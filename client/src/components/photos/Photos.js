@@ -25,7 +25,7 @@ const Photos = ({env}) => {
     const photos = photoXYZ[env]
 
     useEffect(() => {
-        imageServices.list(env).then(response => response === 'error' ? navigate('erreur') : setUrls(response))
+        imageServices.list(env).then(response => response === 'error' ? navigate('/erreur') : setUrls(response))
     },[])
 
     const getUrls = async () => {

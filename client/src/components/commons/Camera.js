@@ -34,7 +34,7 @@ const Camera = ({env}) => {
 
         if (cameraProgress < 1) {
             const point = curve.getPointAt(cameraProgress)
-            cameraRef.current.setAttribute('position', point)
+            cameraRef.current && cameraRef.current.setAttribute('position', point)
             window.requestAnimationFrame(tick)
         } else {
             setFollowing(false)

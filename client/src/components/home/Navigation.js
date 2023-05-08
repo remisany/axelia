@@ -23,6 +23,8 @@ const Navigation = () => {
     useEffect(() => {
         const resizeObserver = new ResizeObserver(handleResize)
         resizeObserver.observe(document.body)
+
+        return () => resizeObserver.unobserve(document.body)
     },[])
 
     return (

@@ -12,6 +12,7 @@ import Camera from '../commons/Camera';
 
 //import actions
 import {loaderActions} from '../../actions/loaderActions';
+import {historyActions} from "../../actions/historyActions";
 
 const Scene = ({env, envRef, model, rotation}) => {
     const rotationRef = `${rotation[0]} ${rotation[1]} ${rotation[2]}`
@@ -21,6 +22,8 @@ const Scene = ({env, envRef, model, rotation}) => {
     useEffect(() => {
         const loader = new GLTFLoader()
 
+        historyActions.scene(dispatch)
+
         loader.load(model, (gltf) => {
             envRef.current && envRef.current.object3D.add(gltf.scene)
             loaderActions.progress(dispatch)
@@ -28,23 +31,6 @@ const Scene = ({env, envRef, model, rotation}) => {
     }, [])
 
     return (
-        <a-scene raycaster='objects: [data-clickable]'>
-            <a-assets>
-                <img id='sky' src={sky} alt='background'/>
-            </a-assets>
-
-            <a-entity shadow='cast:true' position='0 -35 0' rotation={rotationRef} ref={envRef}></a-entity>
-
-            <a-entity light='type: ambient; color: #C2C19B; intensity: .6'></a-entity>
-            <a-entity light='type: directional; color: #FFF; intensity: 1' position='-0.5 1 1'></a-entity>
-        </a-scene>
-    )
-}
-
-export default Scene
-
-/*
-
         <a-scene raycaster='objects: [data-clickable]'>
             <a-assets>
                 <img id='sky' src={sky} alt='background'/>
@@ -61,5 +47,7 @@ export default Scene
             <a-entity light='type: ambient; color: #BBB'></a-entity>
             <a-entity light='type: directional; color: #FFF; intensity: 0.4' position='-0.5 1 1'></a-entity>
         </a-scene>
+    )
+}
 
- */
+export default Scene

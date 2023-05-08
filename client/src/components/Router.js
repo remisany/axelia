@@ -16,6 +16,7 @@ const Router = () => {
                     <Route path='/foret' element={<Forest/>}/>
                     <Route path='/image' element={<Image/>}/>
                     <Route path='/erreur' element={<Error/>}/>
+                    <Route path='*' element={<Error/>}/>
                 </Routes>
             </Suspense>
         </BrowserRouter>

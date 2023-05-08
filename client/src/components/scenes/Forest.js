@@ -28,10 +28,10 @@ const Forest = () => {
                 env='forest'
                 envRef={forestRef}
                 model={forest}
-                rotation={[0, 0, 0]}
+                rotation={[0, -70, 0]}
             />
+            <LoaderContainer length={14}/>
         </Fragment>
-
     )
 }
 

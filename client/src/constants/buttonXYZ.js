@@ -1,23 +1,17 @@
 //import assets
-import Museum from '../assets/icons/museum.svg'
-import Enter from '../assets/icons/enter.svg'
-import Reload from '../assets/icons/reload.svg'
+import Exit from '../assets/icons/exit.png'
+import Play from '../assets/icons/play.png'
 
 const forestButtons = {
-    museum: {
+    enter: {
         position: [-96, -18.5, 88],
         rotation: [0, 5, 0],
-        image: Museum
+        image: Play
     },
-    enter: {
+    museum: {
         position: [-94, -18.5, 88],
         rotation: [0, -5, 0],
-        image: Enter
-    },
-    reload: {
-        position: [-94, -18.5, 88],
-        rotation: [0, -5, 0],
-        image: Reload
+        image: Exit
     }
 }
 
