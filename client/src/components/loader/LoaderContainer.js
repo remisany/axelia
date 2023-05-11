@@ -6,7 +6,7 @@ import {Typography} from '@mui/material';
 import {CSSTransition} from 'react-transition-group';
 
 //import selectors
-import {loaderSelector} from '../../reducers/selectors';
+import {loaderSelector, soundSelector} from '../../reducers/selectors';
 
 //import assets
 import Loader from '../../assets/loader/loader.json';
@@ -22,6 +22,7 @@ const LoaderContainer = ({length, env}) => {
     const loaderRef = useRef(null)
 
     const loader = useSelector(loaderSelector)
+    const soundScene = useSelector(soundSelector)
 
     const dispatch = useDispatch()
 
@@ -32,9 +33,11 @@ const LoaderContainer = ({length, env}) => {
         progressCalc === 100 && setTimeout(() => setDisplay(false), 1000)
     }
 
-    const play = () => {
-        !disable && sound.play(dispatch, env)
-        setDisable(true)
+    const playSound = () => {
+        if (!disable) {
+            sound.play(dispatch, env)
+            setDisable(true)
+        }
     }
 
     useEffect(() => {
@@ -47,7 +50,7 @@ const LoaderContainer = ({length, env}) => {
 
     return (
         <CSSTransition classNames='lc-transition' in={display} timeout={1000} unmountOnExit>
-            <div className='lc-container' ref={loaderRef} onClick={() => play()}>
+            <div className='lc-container' ref={loaderRef} onClick={() => playSound()}>
                 <div className='lc-player'>
                     <Player src={Loader} loop autoplay/>
                 </div>

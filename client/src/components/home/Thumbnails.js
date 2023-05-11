@@ -10,14 +10,33 @@ import {sound} from '../../constants/sound';
 import {soundSelector} from '../../reducers/selectors';
 
 const Thumbnails = () => {
+    let first = true
+
     const dispatch = useDispatch()
 
     const navigate = useNavigate()
 
     const soundScene = useSelector(soundSelector)
 
+    const handleResize = () => {
+        if (first) {
+            first = false
+        } else {
+            window.scrollTo(0, 0)
+            window.location.reload()
+        }
+    }
+
+    const visit = url => {
+        resizeObserver.unobserve(document.body)
+        navigate(url)
+    }
+
+    const resizeObserver = new ResizeObserver(handleResize)
+
     useEffect(() => {
         sound.stop(dispatch, soundScene.soundId)
+        resizeObserver.observe(document.body)
     }, [])
 
     return (
@@ -25,7 +44,7 @@ const Thumbnails = () => {
             {thumbnails.map((thumbnail, indexT) => (
                 <Fragment key={indexT}>
                     <div className='tp-content'>
-                        <div className='tp-clickable' onClick={() => navigate(thumbnail.url)}></div>
+                        <div className='tp-clickable' onClick={() => visit(thumbnail.url)}></div>
                         <img src={thumbnail.src} alt={thumbnail.alt}/>
                     </div>
                 </Fragment>

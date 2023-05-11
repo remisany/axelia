@@ -10,7 +10,7 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
     const [active, setActive] = useState(false)
     const [positionButton, setPositionButton] = useState(null)
 
-    const {position, rotation, image} = type
+    const {position, rotation, image, scale} = type
 
     useEffect(() => {
         buttonRef.current.addEventListener('click', onClick)
@@ -28,7 +28,7 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
 
     useEffect(() => {
         if (animate) {
-            buttonAnimations.disappearance(buttonRef, position, active)
+            buttonAnimations.disappearance(buttonRef, position, active, scale)
             if (active) {
                 setAnimate(false)
                 setTimeout(() => action && action(), 1000)
@@ -37,7 +37,7 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
     }, [animate])
 
     useEffect(() => {
-        buttonAnimations.appearance(buttonRef, position)
+        buttonAnimations.appearance(buttonRef, position, scale)
         setPositionButton(`${position[0]} ${position[1]} ${position[2]}`)
     }, [])
 
@@ -59,13 +59,13 @@ const Button = ({type, id, action, animate, setAnimate, setCursorColor}) => {
                 ref={buttonRef}
                 position={positionButton}
                 rotation={`${rotation[0]} ${rotation[1]} ${rotation[2]}`}
-                depth='0.1'
-                height='1'
-                width='1'
+                depth={scale / 10}
+                height={scale}
+                width={scale}
                 color={colors.originalPink}
                 id={id}
             >
-                <a-image src={`#btnImg_${id}`} height='0.6' width='0.6' position='0 0 0.1'></a-image>
+                <a-image src={`#btnImg_${id}`} height={scale * 0.6} width={scale * 0.6} position={`0 0 ${scale * 0.1}`}></a-image>
             </a-box>
         </Fragment>
     )

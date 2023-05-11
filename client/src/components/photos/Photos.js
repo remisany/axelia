@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
 //import components
 import Photo from './Photo';
@@ -22,16 +22,16 @@ const Photos = ({env}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const photos = photoXYZ[env]
+    const {points, scale} = photoXYZ[env]
 
     useEffect(() => {
         imageServices.list(env).then(response => response === 'error' ? navigate('/erreur') : setUrls(response))
     },[])
 
     const getUrls = async () => {
-        const randomNumbers = await getArrayRandomNumbers(photos.length, urls.length)
+        const randomNumbers = await getArrayRandomNumbers(points.length, urls.length)
 
-        photos.map((photo, index)=> photos[index].src = urls[randomNumbers[index]])
+        points.map((photo, index)=> points[index].src = urls[randomNumbers[index]])
     }
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const Photos = ({env}) => {
     },[urls])
 
     return (
-        !loading && photos.map((photo, index) => <Photo photo={photo} key={index}/>)
+        !loading && points.map((photo, index) => <Photo photo={photo} key={index} scale={scale}/>)
     )
 }
 

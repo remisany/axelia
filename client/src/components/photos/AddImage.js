@@ -10,7 +10,7 @@ const AddImage = () => {
     const onSubmit = values => {
         const formData = new FormData();
         formData.append('image', values.file[0]);
-        formData.append('collection', 'forest');
+        formData.append('collection', 'lake');
         imageServices.add(formData)
     }
 

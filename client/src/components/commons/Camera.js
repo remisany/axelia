@@ -10,6 +10,8 @@ import Button from './Button';
 import {buttonXYZ} from '../../constants/buttonXYZ';
 import {cameraPath} from '../../constants/cameraPath';
 import {colors} from '../../constants/colors'
+import {sound} from '../../constants/sound';
+import {speed} from '../../constants/speed';
 
 //import actions
 import {loaderActions} from '../../actions/loaderActions';
@@ -30,7 +32,7 @@ const Camera = ({env}) => {
     let cameraProgress = 1
 
     const tick = () => {
-        cameraProgress += 0.0001
+        cameraProgress += speed[env]
 
         if (cameraProgress < 1) {
             const point = curve.getPointAt(cameraProgress)
@@ -51,6 +53,7 @@ const Camera = ({env}) => {
     }
 
     const enter = () => {
+        sound.play(dispatch, env)
         cameraProgress = 0
         setFollowing(true)
         window.requestAnimationFrame(tick)
@@ -59,7 +62,7 @@ const Camera = ({env}) => {
     return (
         <Fragment>
             <a-camera ref={cameraRef} wasd-controls='enabled: false'>
-                {!following && <a-cursor color={cursorColor} scale='2 2 2'></a-cursor>}
+                {!following && <a-cursor color={cursorColor} scale='.02 .02 .02' position='0 0 -.01'></a-cursor>}
             </a-camera>
 
             {!following && <Fragment>

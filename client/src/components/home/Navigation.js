@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 //import components
 import Thumbnails from "./Thumbnails";
@@ -9,24 +9,6 @@ import NavigationBottom from "./NavigationBottom";
 import Stencil from "../../assets/icons/stencil.png";
 
 const Navigation = () => {
-    let first = true
-
-    const handleResize = () => {
-        if (first) {
-            first = false
-        } else {
-            window.scrollTo(0, 0)
-            window.location.reload()
-        }
-    }
-
-    useEffect(() => {
-        const resizeObserver = new ResizeObserver(handleResize)
-        resizeObserver.observe(document.body)
-
-        return () => resizeObserver.unobserve(document.body)
-    },[])
-
     return (
         <div className='nnp-page'>
             <NavigationTop/>

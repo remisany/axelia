@@ -12,10 +12,12 @@ import Camera from '../commons/Camera';
 
 //import actions
 import {loaderActions} from '../../actions/loaderActions';
-import {historyActions} from "../../actions/historyActions";
+import {historyActions} from '../../actions/historyActions';
 
-const Scene = ({env, envRef, model, rotation}) => {
-    const rotationRef = `${rotation[0]} ${rotation[1]} ${rotation[2]}`
+const Scene = ({env, envRef, model, rotation, position, scale}) => {
+    const refRotation = `${rotation[0]} ${rotation[1]} ${rotation[2]}`
+    const refPosition = `${position[0]} ${position[1]} ${position[2]}`
+    const refScale = `${scale[0]} ${scale[1]} ${scale[2]}`
 
     const dispatch = useDispatch()
 
@@ -36,7 +38,7 @@ const Scene = ({env, envRef, model, rotation}) => {
                 <img id='sky' src={sky} alt='background'/>
             </a-assets>
 
-            <a-entity shadow='cast:true' position='0 0 0' rotation={rotationRef} ref={envRef}></a-entity>
+            <a-entity shadow='cast:true' position={refPosition} rotation={refRotation} scale={refScale} ref={envRef}></a-entity>
 
             <Photos env={env}/>
 

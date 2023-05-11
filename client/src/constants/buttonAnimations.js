@@ -1,6 +1,6 @@
-function appearance (buttonRef, position) {
-    const positionFirstFrom = `${position[0]} ${position[1] + 10 } ${position[2]}`
-    const positionFirstTo = `${position[0]} ${position[1] - .2} ${position[2]}`
+function appearance (buttonRef, position, scale) {
+    const positionFirstFrom = `${position[0]} ${position[1] + (10 * scale)} ${position[2]}`
+    const positionFirstTo = `${position[0]} ${position[1] - (.2 * scale)} ${position[2]}`
     const positionSecondTo = `${position[0]} ${position[1]} ${position[2]}`
 
     buttonRef.current.setAttribute('animation__positionFirst', {
@@ -23,11 +23,11 @@ function appearance (buttonRef, position) {
     });
 }
 
-function disappearance (buttonRef, position, active) {
+function disappearance (buttonRef, position, active, scale) {
     const scaleTo = active ? '1.4 1.4 1.4' : '.6 .6 .6'
     const positionFirstFrom = `${position[0]} ${position[1]} ${position[2]}`
-    const positionFirstTo = active ? `${position[0]} ${position[1] - .2} ${position[2]}` : `${position[0]} ${position[1] + .2} ${position[2]}`
-    const positionSecondTo = active ?  `${position[0]} ${position[1] + 10} ${position[2]}` : `${position[0]} ${position[1] - 10} ${position[2]}`
+    const positionFirstTo = active ? `${position[0]} ${position[1] - (.2 * scale)} ${position[2]}` : `${position[0]} ${position[1] + (.2 * scale)} ${position[2]}`
+    const positionSecondTo = active ?  `${position[0]} ${position[1] + (10 * scale)} ${position[2]}` : `${position[0]} ${position[1] - (10 * scale)} ${position[2]}`
 
     buttonRef.current.setAttribute('animation__scale', {
         property: 'scale',

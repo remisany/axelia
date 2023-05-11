@@ -4,7 +4,10 @@ import {Howl, Howler} from 'howler';
 import {soundActions} from '../actions/soundActions';
 
 const sounds = {
-    forest: 'https://lasonotheque.org/UPLOAD/mp3/2715.mp3'
+    forest: 'https://lasonotheque.org/UPLOAD/mp3/2715.mp3',
+    mountain: 'https://lasonotheque.org/UPLOAD/mp3/0595.mp3',
+    desert: 'https://lasonotheque.org/UPLOAD/mp3/0699.mp3',
+    lake: 'https://lasonotheque.org/UPLOAD/mp3/2713.mp3'
 }
 
 function play (dispatch, env) {
@@ -16,13 +19,10 @@ function play (dispatch, env) {
         html5: true
     })
 
-    const onPlay = () => {
+    if(!Howler._howls[0].playing()) {
         const soundId = sound.play()
-        document.removeEventListener('click', onPlay)
         soundActions.set(dispatch, soundId)
     }
-
-    document.addEventListener('click', onPlay)
 }
 
 function stop (dispatch, soundId) {
