@@ -3,7 +3,7 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    height: 530vh;
+    height: 380vh;
   }
 }
 
@@ -57,17 +57,6 @@
       top: 0;
       animation: title 4s ease-in-out infinite;
     }
-  }
-}
-
-.np {
-  &-page {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30rem;
   }
 }
 
@@ -126,91 +115,71 @@
 .nnp {
   &-page {
     margin-top: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     width: 100%;
-    height: 300vh;
+    height: 150vh;
   }
 
   &-stencil {
-    width: 100%;
     z-index: 5;
-    height: 100vh;
-    top: 0;
+    top: 50vh;
     position: fixed;
-    display: flex;
-    justify-content: center;
-
-    & img {
-      height: 55%;
-      align-self: center;
-    }
-  }
-
-  &-text {
-    background-color: $white;
-    position: absolute;
-    font-size: 10rem;
-    font-weight: 700;
-    z-index: 150;
-    color: $originalPink;
-
-    & span {
-      font-size: 10rem;
-      font-weight: 700;
-      color: transparent;
-      -webkit-text-stroke: .2rem $originalPink;
-    }
-
-    &-first {
-      left: 2rem;
-      top: 2rem;
-    }
-
-    &-last {
-      right: 2rem;
-      bottom: 2rem;
-    }
-  }
-}
-
-.nt {
-  &-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.tp {
-  &-container {
-    margin-top: 50vh;
-    margin-bottom: 25vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &-clickable {
-    position: absolute;
-    height: 100%;
-    width: 45rem;
-    cursor: pointer;
-    z-index: 10;
+    z-index: 15;
+    top: 50vh;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 50%;
+    opacity: 0;
+    background-color: blue;
+
+    &.active {
+      cursor: pointer;
+    }
   }
 
-  &-content {
-    position: relative;
+  &-title {
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 25vh;
+    text-align: center;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5rem 0;
+    right: 30%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $originalPink;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: 14;
+  }
 
-    & img {
-      height: 13rem;
+  &-transition {
+    &-enter {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    &-enter-active {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 500ms, opacity 300ms;
+    }
+
+    &-exit {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &-exit-active {
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: transform 500ms, opacity 300ms;
     }
   }
 }
@@ -242,117 +211,6 @@
   }
 }
 
-.ntp {
-  &-container {
-    padding-top: 2rem;
-    background-color: $white;
-    position: fixed;
-    width: 100%;
-    height: 25%;
-    z-index: 100;
-
-    &-first {
-      top: 0
-    }
-
-    &-last {
-      bottom: 0;
-    }
-  }
-
-  &-transition {
-    &-enter {
-      opacity: 0;
-      transform: scale(0);
-    }
-
-    &-enter-active {
-      opacity: 1;
-      transform: scale(1);
-      transition: opacity 200ms, transform 200ms;
-    }
-
-    &-exit {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    &-exit-active {
-      opacity: 0;
-      transform: scale(0);
-      transition: opacity 200ms, transform 200ms;
-    }
-  }
-
-  &-dest {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    z-index: 300;
-
-    &-first {
-      left: 0;
-    }
-
-    &-last {
-      right: 0;
-    }
-
-    &-env {
-      font-size: 2rem;
-      color: $originalPink;
-      margin-top: 3rem;
-      font-weight: 700;
-    }
-
-    &-point {
-      position: absolute;
-      margin: auto 0;
-      top: 0;
-      bottom: 0;
-      background-color: $originalPink;
-      height: 1.4rem;
-      width: 1.4rem;
-      border-radius: 4rem;
-      z-index: 300;
-    }
-  }
-
-  &-content {
-    position: absolute;
-    height: calc(100% - 2rem);
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    z-index: 300;
-
-    &-hide {
-      position: absolute;
-      background-color: #FFFFFF;
-      height: calc(48.5% - 1rem);
-      width: 100%;
-
-      &-first {
-        top: 2rem;
-      }
-
-      &-last {
-        bottom: 0;
-      }
-    }
-  }
-
-  &-cursor {
-    position: absolute;
-    background-color: $originalPink;
-    width: 200%;
-    height: calc(100% - 2rem);
-  }
-}
-
 @media (min-width: 407px) {
   .ip {
     &-title {
@@ -375,26 +233,6 @@
   .is {
     &-container {
       margin: 2rem;
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 2.5rem;
-        margin-top: 4.5rem;
-      }
-
-      &-point {
-        height: 1.6rem;
-        width: 1.6rem;
-      }
-    }
-
-    &-content {
-      &-hide {
-        height: calc(49% - 1rem);
-      }
     }
   }
 }
@@ -429,34 +267,6 @@
       height: 5rem;
       margin: 3rem;
       width: 5rem;
-    }
-  }
-
-  .nnp {
-    &-stencil {
-      & img {
-        height: 100%;
-      }
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 2rem;
-        margin-top: 0;
-      }
-
-      &-point {
-        height: 1.2rem;
-        width: 1.2rem;
-      }
-    }
-
-    &-content {
-      &-hide {
-        height: calc(48% - 1rem);
-      }
     }
   }
 }
@@ -494,34 +304,6 @@
 
       & p {
         font-size: 1.5rem;
-      }
-    }
-  }
-
-  .nnp {
-    &-stencil {
-      & img {
-        height: 100%;
-      }
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 2rem;
-        margin-top: 0;
-      }
-
-      &-point {
-        height: 1.2rem;
-        width: 1.2rem;
-      }
-    }
-
-    &-content {
-      &-hide {
-        height: calc(48% - 1rem);
       }
     }
   }
@@ -565,51 +347,6 @@
 
       & p {
         font-size: 2rem;
-      }
-    }
-
-    &-content {
-      top: -4rem;
-      left: -4rem;
-      height: 18rem;
-      width: 18rem;
-
-      & tspan {
-        font-size: 2rem;
-      }
-    }
-  }
-
-  .tp {
-    &-clickable {
-      width: 50rem;
-    }
-
-    &-content {
-      & img {
-        height: 28rem;
-      }
-    }
-  }
-
-  .nnp {
-    &-stencil {
-      & img {
-        height: 80%;
-      }
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 3.5rem;
-        margin-top: 4.5rem;
-      }
-
-      &-point {
-        height: 2rem;
-        width: 2rem;
       }
     }
   }
@@ -656,32 +393,6 @@
       }
     }
   }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 3rem;
-        margin-top: 2.5rem;
-      }
-
-      &-point {
-        height: 2rem;
-        width: 2rem;
-      }
-    }
-  }
-
-  .tp {
-    &-clickable {
-      width: 48rem;
-    }
-
-    &-content {
-      & img {
-        height: 27rem;
-      }
-    }
-  }
 }
 
 //large screens
@@ -700,39 +411,6 @@
         & span {
           font-size: 4rem;
         }
-      }
-    }
-  }
-
-  .tp {
-    &-content {
-      & img {
-        height: 24rem;
-      }
-    }
-  }
-
-  .nnp {
-    &-text {
-      font-size: 10rem;
-
-      & span {
-        font-size: 10rem;
-        -webkit-text-stroke: .2rem $originalPink;
-      }
-    }
-  }
-
-  .ntp {
-    &-dest {
-      &-env {
-        font-size: 4rem;
-        margin-top: 1rem;
-      }
-
-      &-point {
-        height: 2rem;
-        width: 2rem;
       }
     }
   }

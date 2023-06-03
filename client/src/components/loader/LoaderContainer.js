@@ -6,7 +6,7 @@ import {Typography} from '@mui/material';
 import {CSSTransition} from 'react-transition-group';
 
 //import selectors
-import {loaderSelector, soundSelector} from '../../reducers/selectors';
+import {loaderSelector} from '../../reducers/selectors';
 
 //import assets
 import Loader from '../../assets/loader/loader.json';
@@ -18,20 +18,13 @@ const LoaderContainer = ({length, env}) => {
     const [progressBar, setProgressBar] = useState(0)
     const [display, setDisplay] = useState(true)
     const [disable, setDisable] = useState(false)
+    const [lastUpdate, setLastUpdate] = useState(Date.now());
 
     const loaderRef = useRef(null)
 
     const loader = useSelector(loaderSelector)
-    const soundScene = useSelector(soundSelector)
 
     const dispatch = useDispatch()
-
-    const getProgress = progress => {
-        const progressCalc = Math.round(progress/length * 100)
-        setProgressBar(progressCalc)
-
-        progressCalc === 100 && setTimeout(() => setDisplay(false), 1000)
-    }
 
     const playSound = () => {
         if (!disable) {
@@ -41,12 +34,33 @@ const LoaderContainer = ({length, env}) => {
     }
 
     useEffect(() => {
-        getProgress(loader.progress)
+        const progressCalc = Math.round(loader.progress/length * 100)
+        setProgressBar(progressCalc !== 100 ? progressCalc : 100)
     }, [loader])
 
     useEffect(() => {
         loaderRef.current && loaderRef.current.click()
     }, [])
+
+    useEffect(() => {
+        progressBar === 100 && setTimeout(() => setDisplay(false), 3000)
+    }, [progressBar])
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const currentTime = Date.now();
+            const elapsedTime = currentTime - lastUpdate;
+
+            if (elapsedTime > 3000) {
+                setProgressBar(prevProgress => prevProgress !== 100 ? prevProgress + 1 : 100)
+                setLastUpdate(currentTime)
+            }
+        }, 1000)
+
+        return () => {
+            clearInterval(timer)
+        }
+    }, [lastUpdate])
 
     return (
         <CSSTransition classNames='lc-transition' in={display} timeout={1000} unmountOnExit>

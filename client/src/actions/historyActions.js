@@ -5,7 +5,6 @@ export const historyActions = {
     scene,
     setError,
     razError,
-    raz
 }
 
 function scene (dispatch) {
@@ -18,8 +17,4 @@ function setError (dispatch) {
 
 function razError (dispatch) {
     return dispatch({type: DT.HISTORY_ERROR_RAZ})
-}
-
-async function raz (dispatch) {
-    return await dispatch({type: DT.HISTORY_RAZ})
 }

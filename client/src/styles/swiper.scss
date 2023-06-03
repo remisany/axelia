@@ -1,0 +1,62 @@
+.sp {
+  &-container {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+
+    & .slick-slider {
+      //position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    & .slick-dots {
+      bottom: -9rem;
+      z-index: 10000;
+
+      & li {
+        width: 7rem;
+
+        &.slick-active {
+          & .pagination-icon {
+            background-color: $originalPink;
+            border-radius: 5rem;
+
+            & path {
+              fill: $white;
+            }
+          }
+        }
+      }
+
+      & .pagination-icon {
+        width: 6rem;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+          width: 4.5rem;
+        }
+
+        & path {
+          fill: $originalPink;
+        }
+      }
+    }
+  }
+
+  &-img-container {
+    height: 35rem;
+    width: 100%;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 40%;
+    }
+  }
+}
