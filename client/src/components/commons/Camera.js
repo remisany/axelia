@@ -52,11 +52,16 @@ const Camera = ({env}) => {
         navigate(`/`)
     }
 
+    const dontSleep = () => {
+        'wakeLock' in navigator && 'request' in navigator.wakeLock && navigator.wakeLock.request('screen')
+    }
+
     const enter = () => {
         sound.play(dispatch, env)
         cameraProgress = 0
         setFollowing(true)
         window.requestAnimationFrame(tick)
+        dontSleep()
     }
 
     return (

@@ -62,7 +62,7 @@ const Navigation = () => {
 
             <div>
                 <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
-                    <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", "")}</div>
+                    <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", "!")}</div>
                 </CSSTransition>
 
                 <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>
