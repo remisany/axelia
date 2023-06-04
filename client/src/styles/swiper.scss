@@ -6,17 +6,16 @@
     position: fixed;
 
     & .slick-slider {
-      //position: absolute;
       top: 50%;
       transform: translate(0, -50%);
     }
 
     & .slick-dots {
-      bottom: -9rem;
+      bottom: 1rem;
       z-index: 10000;
 
       & li {
-        width: 7rem;
+        width: 5.75rem;
 
         &.slick-active {
           & .pagination-icon {
@@ -31,14 +30,14 @@
       }
 
       & .pagination-icon {
-        width: 6rem;
-        height: 6rem;
+        width: 5rem;
+        height: 5rem;
         display: flex;
         justify-content: center;
         align-items: center;
 
         & svg {
-          width: 4.5rem;
+          width: 3.75rem;
         }
 
         & path {
@@ -56,7 +55,163 @@
     align-items: center;
 
     & img {
-      width: 40%;
+      width: 75%;
+    }
+  }
+}
+
+@media (min-width: 407px) {
+  .sp {
+    &-container {
+      & .slick-dots {
+        bottom: -1.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .sp {
+    &-img-container {
+      height: 50rem;
+
+      & img {
+        width: 50%;
+      }
+    }
+
+    &-container {
+      & .slick-dots {
+        bottom: 9rem;
+
+        & li {
+          width: 5rem;
+        }
+
+        & .pagination-icon {
+          width: 4rem;
+          height: 4rem;
+
+          & svg {
+            width: 2.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//large phone landscape
+@media (min-width: 768px) and (orientation: landscape) {
+  .sp {
+    &-img-container {
+      height: 50rem;
+
+      & img {
+        width: 40%;
+      }
+    }
+
+    &-container {
+      & .slick-dots {
+        bottom: 8rem;
+      }
+    }
+  }
+}
+
+//tablets
+@media (min-width: 768px) and (orientation: portrait) {
+  .sp {
+    &-img-container {
+      height: 50rem;
+
+      & img {
+        width: 80%;
+      }
+    }
+
+    &-container {
+      & .slick-dots {
+        bottom: -4rem;
+
+        & li {
+          width: 7rem;
+        }
+
+        & .pagination-icon {
+          width: 6rem;
+          height: 6rem;
+
+          & svg {
+            width: 4.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//small screens
+@media (min-width: 1024px) {
+  .sp {
+    &-img-container {
+      height: 50rem;
+
+      & img {
+        width: 45%;
+      }
+    }
+
+    &-container {
+      & .slick-dots {
+        bottom: 0;
+
+        & li {
+          width: 7rem;
+        }
+
+        & .pagination-icon {
+          width: 6rem;
+          height: 6rem;
+
+          & svg {
+            width: 4.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//large screens
+@media (min-width: 1200px) {
+  .sp {
+    &-img-container {
+      height: 35rem;
+
+      & img {
+        width: 40%;
+      }
+    }
+
+    &-container {
+      & .slick-dots {
+        bottom: -9rem;
+
+        & li {
+          width: 7rem;
+        }
+
+        & .pagination-icon {
+          width: 6rem;
+          height: 6rem;
+
+          & svg {
+            width: 4.5rem;
+          }
+        }
+      }
     }
   }
 }

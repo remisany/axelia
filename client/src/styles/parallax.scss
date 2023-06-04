@@ -123,7 +123,8 @@
     z-index: 5;
     top: 50vh;
     position: fixed;
-    width: 100%;
+    width: 200%;
+    max-width: 200%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -134,8 +135,8 @@
     position: fixed;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35%;
-    height: 50%;
+    width: 70%;
+    height: 30%;
     opacity: 0;
     background-color: blue;
 
@@ -147,11 +148,11 @@
   &-title {
     text-transform: uppercase;
     position: fixed;
-    bottom: 25vh;
+    bottom: 36vh;
     text-align: center;
     width: 100%;
-    right: 30%;
-    font-size: 2rem;
+    right: 10%;
+    font-size: 1.2rem;
     font-weight: 700;
     color: $originalPink;
     writing-mode: vertical-rl;
@@ -235,6 +236,17 @@
       margin: 2rem;
     }
   }
+
+  .nnp {
+    &-clickable {
+      width: 70%;
+      height: 25%;
+    }
+
+    &-title {
+      bottom: 39vh;
+    }
+  }
 }
 
 @media (min-width: 480px) {
@@ -267,6 +279,23 @@
       height: 5rem;
       margin: 3rem;
       width: 5rem;
+    }
+  }
+
+  .nnp {
+    &-stencil {
+      width: 130%;
+    }
+
+    &-clickable {
+      width: 42%;
+      height: 60%;
+    }
+
+    &-title {
+      bottom: 22vh;
+      right: 24%;
+      font-size: 1.5rem;
     }
   }
 }
@@ -305,6 +334,18 @@
       & p {
         font-size: 1.5rem;
       }
+    }
+  }
+
+  .nnp {
+    &-stencil {
+      width: 100%;
+    }
+
+    &-title {
+      bottom: 24vh;
+      right: 30%;
+      font-size: 1.5rem;
     }
   }
 }
@@ -350,6 +391,23 @@
       }
     }
   }
+
+  .nnp {
+    &-stencil {
+      width: 200%;
+    }
+
+    &-title {
+      bottom: 32vh;
+      right: 10%;
+      font-size: 2.5rem;
+    }
+
+    &-clickable {
+      width: 70%;
+      height: 40%;
+    }
+  }
 }
 
 //small screens
@@ -393,6 +451,23 @@
       }
     }
   }
+
+  .nnp {
+    &-stencil {
+      width: 120%;
+    }
+
+    &-title {
+      bottom: 32vh;
+      right: 26%;
+      font-size: 2rem;
+    }
+
+    &-clickable {
+      width: 40%;
+      height: 40%;
+    }
+  }
 }
 
 //large screens
@@ -412,6 +487,23 @@
           font-size: 4rem;
         }
       }
+    }
+  }
+
+  .nnp {
+    &-stencil {
+      width: 100%;
+    }
+
+    &-clickable {
+      width: 35%;
+      height: 50%;
+    }
+
+    &-title {
+      bottom: 25vh;
+      right: 30%;
+      font-size: 2rem;
     }
   }
 }
