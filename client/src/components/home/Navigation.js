@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 //import assets
@@ -12,6 +12,7 @@ import {CSSTransition} from "react-transition-group";
 const Navigation = () => {
     const [url, setUrl] = useState(thumbnails[0].url)
     const [animate, setAnimate] = useState(true)
+    const [stencilLoad, setStencilLoad] = useState(false)
 
     const navigate = useNavigate()
 
@@ -56,17 +57,21 @@ const Navigation = () => {
 
     return (
         <div className='nnp-page'>
-            <div className='sp-container'>
-                <Swiper setUrl={setUrl} setAnimate={setAnimate}/>
-            </div>
+            {stencilLoad &&
+                <div className='sp-container'>
+                    <Swiper setUrl={setUrl} setAnimate={setAnimate}/>
+                </div>
+            }
 
             <div>
-                <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
-                    <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", "!")}</div>
-                </CSSTransition>
+                {stencilLoad && <Fragment>
+                    <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
+                        <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", "")}</div>
+                    </CSSTransition>
 
-                <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>
-                <img className='nnp-stencil' src={Stencil} alt='camera icon'/>
+                    <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>
+                </Fragment>}
+                <img className='nnp-stencil' src={Stencil} alt='camera icon' onLoad={() => setStencilLoad(true)}/>
             </div>
         </div>
     )
