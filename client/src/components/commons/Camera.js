@@ -52,21 +52,16 @@ const Camera = ({env}) => {
         navigate(`/`)
     }
 
-    const dontSleep = () => {
-        'wakeLock' in navigator && 'request' in navigator.wakeLock && navigator.wakeLock.request('screen')
-    }
-
     const enter = () => {
         sound.play(dispatch, env)
         cameraProgress = 0
         setFollowing(true)
         window.requestAnimationFrame(tick)
-        dontSleep()
     }
 
     return (
         <Fragment>
-            <a-camera ref={cameraRef} /*wasd-controls='enabled: false'*/>
+            <a-camera ref={cameraRef} wasd-controls='enabled: false'>
                 {!following && <a-cursor color={cursorColor} scale='.02 .02 .02' position='0 0 -.01'></a-cursor>}
             </a-camera>
 

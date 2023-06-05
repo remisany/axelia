@@ -21,6 +21,10 @@ import './styles/styles.scss'
 //config url
 axios.defaults.baseURL = process.env.REACT_APP_API_HOST
 
+const dontSleep = () => 'wakeLock' in navigator && 'request' in navigator.wakeLock && navigator.wakeLock.request('screen')
+
+dontSleep()
+
 const root = ReactDOM.createRoot(
     document.getElementById('root')
 )
