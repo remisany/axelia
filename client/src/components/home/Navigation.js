@@ -17,6 +17,7 @@ const Navigation = () => {
     const [animate, setAnimate] = useState(true)
     const [stencilLoad, setStencilLoad] = useState(false)
     const [click, setClick] = useState(false)
+    const [img, setImg] = useState('')
 
     const navigate = useNavigate()
 
@@ -25,7 +26,6 @@ const Navigation = () => {
     const width = (screen.getMultiple() * 17067) / (17067 / window.innerWidth) * 0.33
     const height = (screen.getMultiple() * 4409) / (17067 / window.innerWidth)
     const top = (0.5 * document.documentElement.clientHeight) - (height / 2)
-    const randomParam = Math.random()
 
     const setClass = () => {
         const height = document.documentElement.clientHeight
@@ -36,6 +36,7 @@ const Navigation = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', setClass)
+        setImg(`${Stencil}?param=${Math.random()}`)
 
         return () => window.removeEventListener('scroll', setClass)
     }, [])
@@ -54,7 +55,7 @@ const Navigation = () => {
 
                     {click && <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>}
                 </Fragment>}
-                <img className='nnp-stencil' src={`${Stencil}?param=${randomParam}`} alt='camera icon' onLoad={() => setStencilLoad(true)}/>
+                {img !== '' && <img className='nnp-stencil' src={img} alt='camera icon' onLoad={() => setStencilLoad(true)}/>}
             </div>
         </div>
     )
