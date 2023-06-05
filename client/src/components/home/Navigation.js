@@ -52,7 +52,7 @@ const Navigation = () => {
             <div>
                 <Fragment>
                     {calc && <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
-                        <div className='nnp-title' style={{height: calc.height + 'px', top: calc.top + 'px'}}>{url && url.replace("/", "!")}</div>
+                        <div className='nnp-title' style={{height: calc.height + 'px', top: calc.top + 'px'}}>{url && url.replace("/", "")}</div>
                     </CSSTransition>}
 
                     {click && calc && <div className={`nnp-clickable ${url && 'active'}`} style={{height: calc.height + 'px', width: calc.width + 'px'}} onClick={onClick}></div>}
