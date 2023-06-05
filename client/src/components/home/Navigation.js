@@ -25,12 +25,13 @@ const Navigation = () => {
     const width = (screen.getMultiple() * 17067) / (17067 / window.innerWidth) * 0.33
     const height = (screen.getMultiple() * 4409) / (17067 / window.innerWidth)
     const top = (0.5 * document.documentElement.clientHeight) - (height / 2)
+    const randomParam = Math.random()
 
     const setClass = () => {
         const height = document.documentElement.clientHeight
         const position = window.scrollY
 
-        position > height ? setClick(true) : setClick(false)
+        position > (0.7 * height) ? setClick(true) : setClick(false)
     }
 
     useEffect(() => {
@@ -53,7 +54,7 @@ const Navigation = () => {
 
                     {click && <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>}
                 </Fragment>}
-                <img className='nnp-stencil' src={Stencil} alt='camera icon' onLoad={() => setStencilLoad(true)}/>
+                <img className='nnp-stencil' src={`${Stencil}?param=${randomParam}`} alt='camera icon' onLoad={() => setStencilLoad(true)}/>
             </div>
         </div>
     )
