@@ -16,24 +16,29 @@ const Navigation = () => {
     const [url, setUrl] = useState(thumbnails[0].url)
     const [animate, setAnimate] = useState(true)
     const [click, setClick] = useState(false)
+    const [calc, setCalc] = useState()
 
     const navigate = useNavigate()
 
     const onClick = () => url && navigate(url)
 
-    const width = (screen.getMultiple() * 17067) / (17067 / window.innerWidth) * 0.33
-    const height = (screen.getMultiple() * 4409) / (17067 / window.innerWidth)
-    const top = (0.5 * document.documentElement.clientHeight) - (height / 2)
-
     const setClass = () => {
         const height = document.documentElement.clientHeight
         const position = window.scrollY
-
         position > (0.7 * height) ? setClick(true) : setClick(false)
+    }
+
+    const getCalc = () => {
+        const width = (screen.getMultiple() * 17067) / (17067 / window.innerWidth) * 0.33
+        const height = (screen.getMultiple() * 4409) / (17067 / window.innerWidth)
+        const top = (0.5 * document.documentElement.clientHeight) - (height / 2)
+
+        setCalc({width: width, height: height, top: top})
     }
 
     useEffect(() => {
         window.addEventListener('scroll', setClass)
+        getCalc()
 
         return () => window.removeEventListener('scroll', setClass)
     }, [])
@@ -46,11 +51,11 @@ const Navigation = () => {
 
             <div>
                 <Fragment>
-                    <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
-                        <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", ".")}</div>
-                    </CSSTransition>
+                    {calc && <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
+                        <div className='nnp-title' style={{height: calc.height + 'px', top: calc.top + 'px'}}>{url && url.replace("/", ".")}</div>
+                    </CSSTransition>}
 
-                    {click && <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>}
+                    {click && calc && <div className={`nnp-clickable ${url && 'active'}`} style={{height: calc.height + 'px', width: calc.width + 'px'}} onClick={onClick}></div>}
                 </Fragment>
                 <img className='nnp-stencil' src={Stencil} alt='camera icon'/>
             </div>
