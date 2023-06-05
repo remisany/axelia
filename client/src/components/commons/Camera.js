@@ -66,7 +66,7 @@ const Camera = ({env}) => {
 
     return (
         <Fragment>
-            <a-camera ref={cameraRef} wasd-controls='enabled: false'>
+            <a-camera ref={cameraRef} /*wasd-controls='enabled: false'*/>
                 {!following && <a-cursor color={cursorColor} scale='.02 .02 .02' position='0 0 -.01'></a-cursor>}
             </a-camera>
 
