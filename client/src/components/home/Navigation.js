@@ -15,9 +15,7 @@ import {screen} from '../../constants/screen'
 const Navigation = () => {
     const [url, setUrl] = useState(thumbnails[0].url)
     const [animate, setAnimate] = useState(true)
-    const [stencilLoad, setStencilLoad] = useState(false)
     const [click, setClick] = useState(false)
-    const [img, setImg] = useState('')
 
     const navigate = useNavigate()
 
@@ -36,26 +34,25 @@ const Navigation = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', setClass)
-        setImg(`${Stencil}?param=${Math.random()}`)
 
         return () => window.removeEventListener('scroll', setClass)
     }, [])
 
     return (
         <div className='nnp-page'>
-            {stencilLoad && <div className='sp-container'>
+            <div className='sp-container'>
                 <Swiper setUrl={setUrl} setAnimate={setAnimate}/>
-            </div>}
+            </div>
 
             <div>
-                {stencilLoad && <Fragment>
+                <Fragment>
                     <CSSTransition classNames='nnp-transition' in={animate} timeout={1000} unmountOnExit>
-                        <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", "")}</div>
+                        <div className='nnp-title' style={{height: height + 'px', top: top + 'px'}}>{url && url.replace("/", ".")}</div>
                     </CSSTransition>
 
                     {click && <div className={`nnp-clickable ${url && 'active'}`} style={{height: height + 'px', width: width + 'px'}} onClick={onClick}></div>}
-                </Fragment>}
-                {img !== '' && <img className='nnp-stencil' src={img} alt='camera icon' onLoad={() => setStencilLoad(true)}/>}
+                </Fragment>
+                <img className='nnp-stencil' src={Stencil} alt='camera icon'/>
             </div>
         </div>
     )
