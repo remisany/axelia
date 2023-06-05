@@ -25,7 +25,7 @@ const Home = () => {
     useEffect(() => {
         history.scene ? window.location.reload() : setDisplay(true)
         history.error && historyActions.razError(dispatch)
-        setTimeout(() => setLoading(false), 750)
+        setTimeout(() => setLoading(false), 50)
     }, [])
 
     useEffect(() => {
